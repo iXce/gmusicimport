@@ -4,6 +4,8 @@ This script will try to find the best match from Play Music "All Access"
 library for each track.
 
 The file format is:
+
+```
 {
   "playlists": [{"title": "My Playlist 1",
                  "tracks": [{"title": "My Song 1",
@@ -17,6 +19,7 @@ The file format is:
                  ...
                ]
 }
+```
 
 This script was initially crafted to work with a Deezer playlist exporter
 (https://github.com/iXce/deezerexport)

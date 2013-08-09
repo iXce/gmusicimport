@@ -40,7 +40,7 @@ if __name__ == "__main__":
     with open(args.source) as f:
         data = json.load(f)
     if args.dryrun:
-        print "[/!\] We're currently running in dry-run mode"
+        print("[/!\] We're currently running in dry-run mode")
     for playlist in data["playlists"]:
         if args.dryrun:
             print("Checking importability of %s" % playlist["title"])
@@ -52,7 +52,7 @@ if __name__ == "__main__":
             results = client.search_all_access(query)
             match = None
             if args.verbose:
-                print "Fetching matches for %s" % query
+                print("Fetching matches for %s" % query)
             for hit_i, hit in enumerate(results["song_hits"]):
                 if hit_i >= 10:
                     break
@@ -67,7 +67,7 @@ if __name__ == "__main__":
             if match is not None:
                 toimport.append(match)
             else:
-                print "[!!!] No good match for %s" % query
+                print("[!!!] No good match for %s" % query)
         if not args.dryrun and toimport:
             playlist_id = client.create_playlist(playlist["title"])
             client.add_songs_to_playlist(playlist_id, toimport)

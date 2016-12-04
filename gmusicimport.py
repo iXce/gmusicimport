@@ -35,7 +35,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print("Logging in as \"%s\" to Google Play Music" % args.username)
     pw = getpass.getpass()
-    if not client.login(args.username, pw):
+    if not client.login(args.username, pw, Mobileclient.FROM_MAC_ADDRESS)):
         print("Authentication failed. Please check the provided credentials.")
     with open(args.source) as f:
         data = json.load(f)
